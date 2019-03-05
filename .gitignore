@@ -1,0 +1,8 @@
+resources/
+.DS_STORE
+target/
+.idea
+project/target
+project/project
+spark-warehouse/
+output/
