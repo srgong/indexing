@@ -26,7 +26,8 @@ Given text files, the objective is to create a lookup table of words mapped to f
 
 # To Run
 1. `sbt assembly`
-2. `spark-submit Driver spark.input.file=<input_file> spark.output.file=<output_file> <jar_file>`
+2. `spark-submit Driver --master spark://<master_node>:7077 --conf spark.input.file=<input_file> --conf spark.output.file=<output_file> <jar_file>`
+
 You can find the jar file here: `target/scala-2.11/indexing-assembly-1.0.jar`
 
  

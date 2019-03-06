@@ -9,7 +9,6 @@ object Driver {
 
   val sparkConf = new SparkConf()
     .setAppName("Indexing Books")
-    .setMaster("local[*]")
     .set("spark.input.file", "src/main/resources/")
     .set("spark.output.file", "src/main/output/")
 
