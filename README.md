@@ -7,7 +7,7 @@
 
 # Introduction
 
-This project addresses this [prompt](https://github.com/Samariya57/coding_challenges/blob/master/challenge.pdf), where we build a pipeline that creates the index portion commonly found at the end of textbooks. Given text input, this pipeline transforms it into a key value pair where the key is a word, and the value is the file name the word can be found in.
+This project addresses this [prompt](https://github.com/Samariya57/coding_challenges/blob/master/challenge.pdf), where we build a pipeline that creates the index portion commonly found at the end of textbooks. Given text input, this pipeline transforms it into a key value pair where the key is a word, and the value is a list of file names the word can be found in.
 
 # Approach
 
