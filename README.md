@@ -8,11 +8,11 @@
 
 # Introduction
 
-This project addresses this [prompt](https://github.com/Samariya57/coding_challenges/blob/master/challenge.pdf), where we build a pipeline that creates the index portion commonly found at the end of textbooks. Given text input, this pipeline transforms it into a key value pair where the key is a word, and the value is the file name the word can be found in.
+This project addresses this [prompt](https://github.com/Samariya57/coding_challenges/blob/master/challenge.pdf), where we build a pipeline that creates the index portion commonly found at the end of textbooks. Given text input, this pipeline transforms it into a key value pair where the key is a word, and the value is a list of file names the word can be found in.
 
 # Approach
 
-Given text files, the objective is to create a lookup table of words mapped to files they're found in.  
+Given text files, the objective is to create a lookup table of words mapped to files they're found in. This is done using DataFrames to extract file names, and then RDD manipulation to coerce the data into desired output. 
 
 1) Text files are read in as Dataframes. This dataframe contains a single value column for each line of the text. We append each line with their file names using `input_file_name()`.
 2) Next, we normalize the data. File names are cleaned by extracting the trailing number id to create `docId` and each line of text is set to lowercase.
