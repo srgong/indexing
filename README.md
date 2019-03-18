@@ -31,8 +31,11 @@ Processing data in RDDs has a reputation of taking more processing time - especi
 `//using data frames to set up wordId, docId`
 
 `val df = sqlContext.read.text(input).toDF()
+
 .select(explode(split(lower(col("value")), "[^\\w]") as "wordId"),regexp_extract(input_file_name,"([0-9]*)$",1) as "docId")
+
 .distinct
+
 .as[(String, String)].rdd.groupByKey()`
 
 In my alternate method, the main difference is how I chose to break out the column of arrays using DataFrames `explode` instead of RDDs `flatMap`. In testing for performance increase, `explode` took longer (I imagine by orders of magnitude depending on data size). While DataFrame operations may have a better performance when calculating aggregations (ie count, sum, max), row level operations are still done better in RDDs (flatMap, keyBy).  Note that I am using Spark 2.3.1 so this [explode optimization](https://issues.apache.org/jira/browse/SPARK-21657) does not apply.   
